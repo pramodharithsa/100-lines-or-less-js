@@ -7,7 +7,7 @@ initialize: function() {
 	var $this = this;
 	this.model = new (Backbone.Model.extend({}))();
 	this.model.on('change', this.toggleShare, this);
-	this.fb = new Firebase('https://console.firebase.google.com/project/gisday-3ebef/database/firestore/data~2Fgisday~2FqHHTESwnhgjGlUYNPMIx');
+	this.fb = new Firebase('https://gisday-3ebef.firebaseio.com/users');
 	this.symbol = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([0, 255, 0, 0.25]));
 	this.map = new esri.Map('map', {basemap: 'osm', center: [-98.737039, 38.737039], zoom: 4 });
 	$('.current-location').on('click',function() { $this.getLocation($this.model) });
