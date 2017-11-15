@@ -8,7 +8,13 @@ initialize: function() {
 	this.model = new (Backbone.Model.extend({}))();
 	this.model.on('change', this.toggleShare, this);
 	this.fb = new Firebase('https://gisday-3ebef.firebaseio.com/users');
-	this.symbol = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([0, 255, 0, 0.25]));
+	this.symbol1 = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([0, 255, 0, 0.25]));
+	this.symbol2 = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([255, 0, 0, 0.25]));
+	this.symbol3 = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([0, 0, 255, 0.25]));
+	this.symbol4 = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([255, 255, 0, 0.25]));
+	this.symbol5 = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([0, 255, 255, 0.25]));
+	this.symbol6 = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([255, 0, 255, 0.25]));
+	this.symbol7 = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([0, 0, 0, 0.25]));
 	this.map = new esri.Map('map', {basemap: 'osm', center: [-10.04514, 47.712624], zoom: 1 });
 	$('.current-location').on('click',function() { $this.getLocation($this.model) });
 	$('#search-input').on('typeahead:selected', function (evt, datum, name) {
@@ -82,7 +88,22 @@ saveMsg: function (evt) {
 		.attr('data-lat', msg.lat).attr('data-lon',msg.lon).prependTo($('#chat-container'));
 	if (msg.lat && msg.lon && $this.map.graphics) {
 		var pt = new esri.geometry.Point(msg.lon, msg.lat);
-		var g = new esri.Graphic(pt, $this.symbol);
+		var sym;
+		if (msg.name=="Team1")
+			sym=$this.symbol1;
+		else if(msg.name=="Team2")
+			sym=$this.symbol2;
+		else if(msg.name=="Team3")
+			sym=$this.symbol3;
+		else if(msg.name=="Team4")
+			sym=$this.symbol4;
+		else if(msg.name=="Team5")
+			sym=$this.symbol5;
+		else if(msg.name=="Team6")
+			sym=$this.symbol6;
+		else
+			sym=$this.symbol7;
+		var g = new esri.Graphic(pt, sym);
 		$this.map.graphics.add(g);
 	};
     g.setInfoTemplate(new esri.InfoTemplate().setTitle(msg.name +' '+ tS).setContent(msg.text));
