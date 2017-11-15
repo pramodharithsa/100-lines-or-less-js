@@ -15,7 +15,7 @@ initialize: function() {
 		$this.map.centerAndZoom(new esri.geometry.Point(datum.lon, datum.lat), 15);
 		$('#search-modal').modal('hide');
 	});
-	$('#dev-summit').on('click',function() { $this.map.centerAndZoom([-116.5382, 33.8260], 16)});
+	$('#dev-summit').on('click',function() { $this.map.centerAndZoom([-10.04514, 47.712624], 1)});
 	this.fb.on('value', function (ss) {
 		$this.messages = [];
 		_.each(ss.val(), function (item) { _.each(item.messages, function (item2) {
