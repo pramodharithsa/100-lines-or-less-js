@@ -4,19 +4,19 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GIS Day Treasure Hunt</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>GISday - 2017 - Treasure Hunt!</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
         <!-- STYLES -->
-        <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300italic' rel='stylesheet' type='text/css'>
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://js.arcgis.com/3.8/js/esri/css/esri.css">
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300italic' rel='stylesheet' type='text/css'/>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://js.arcgis.com/3.8/js/esri/css/esri.css"/>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
 
-        <link rel="stylesheet" href="css/styles.css">
-        <script src="bower_components/modernizr/modernizr.js"></script>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
 
 
     </head>
@@ -28,7 +28,7 @@
     <div class="container-fluid no-padding">
         <div class="navbar-header">
             <div class="header-title">
-                <p>Gis Day Treasure Hunt</p>
+                <p>GISday - Treasure Hunt!</p>
             </div>
         </div>
         <ul class="nav navbar-nav">
@@ -66,17 +66,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Share!</h4>
+        <h4 class="modal-title" id="myModalLabel">Found Treasure!</h4>
       </div>
       <div class="modal-body">
                 <input type="text" id="name-input" class="form-control" placeholder="Name / User ID">
                 <input type='text' id='message-input' class="form-control" placeholder='Message'>
                 <div>
-                  <div class='btn btn-primary current-location location-selector' style="dispaly:none;"><i class="fa fa-location-arrow"></i>My Location</div>
-                  <div id='add-event-btn' class='btn btn-primary location-selector'><i class="fa fa-map-marker"></i>Map Select</div>
+                  <div class='btn btn-primary current-location location-selector' style="display:none !important;"><i class="fa fa-location-arrow"></i>My Location</div>
+                  <div id='add-event-btn' class='btn btn-primary location-selector' style="float:left !important;"><i class="fa fa-map-marker"></i>Map Select</div>
+                  <div class='col-xs-12 btn btn-success share-message disabled' style="margin-top:0px !important;">Share!</div>
                 </div>
                 <div class="row">
-                  <div class='col-xs-12 btn btn-success share-message disabled'>Share!</div>
+                  <!--<div class='col-xs-12 btn btn-success share-message disabled'>Share!</div>-->
                 </div>
 
       </div>
