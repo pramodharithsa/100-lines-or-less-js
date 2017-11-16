@@ -22,13 +22,7 @@ initialize: function() {
 		$('#search-modal').modal('hide');
 	});
 	$('#dev-summit').on('click',function() { $this.map.centerAndZoom([-10.04514, 47.712624], 1)});
-	this.fb.on('value', function (ss) {
-		$this.messages = [];
-		_.each(ss.val(), function (item) { _.each(item.messages, function (item2) {
-				$this.messages.push(item2) });
-		});
-		$this.displayChatMessages() & $this.activateClickListener() & $this.initTypeahead();
-	});
+	
 },
 events: {
 	'keyup #message-input': 'toggleShare',	'keyup #name-input': 'toggleShare',
