@@ -15,13 +15,13 @@ dojo.addOnLoad(function() {
             this.symbol5 = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([0, 255, 255, 0.25]));
             this.symbol6 = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([255, 0, 255, 0.25]));
             this.symbol7 = new esri.symbol.SimpleMarkerSymbol().setColor(new dojo.Color([0, 0, 0, 0.25]));
-            this.map = new esri.Map('map', { basemap: 'osm', center: [-10.04514, 47.712624], zoom: 1 });
+            this.map = new esri.Map('map', { basemap: 'osm', center: [-10.04514, 47.712624], zoom: 2 });
             $('.current-location').on('click', function() { $this.getLocation($this.model) });
             $('#search-input').on('typeahead:selected', function(evt, datum, name) {
                 $this.map.centerAndZoom(new esri.geometry.Point(datum.lon, datum.lat), 15);
                 $('#search-modal').modal('hide');
             });
-            $('#dev-summit').on('click', function() { $this.map.centerAndZoom([-10.04514, 47.712624], 1) });
+            $('#dev-summit').on('click', function() { $this.map.centerAndZoom([-10.04514, 47.712624], 2) });
             
         },
         events: {
