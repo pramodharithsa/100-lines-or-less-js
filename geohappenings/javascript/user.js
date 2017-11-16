@@ -46,27 +46,27 @@ dojo.addOnLoad(function() {
                 lat: loc.lat, lon: loc.lon, timeStamp: tC
             });
             //
-            if (msg.lat && msg.lon && $this.map.graphics) {
+            if (loc.lat && loc.lon && this.map.graphics) {
                 var pt = new esri.geometry.Point(loc.lon, loc.lat);
                 var sym;
                 if (name == "Team1")
-                    sym = $this.symbol1;
+                    sym = this.symbol1;
                 else if (name == "Team2")
-                    sym = $this.symbol2;
+                    sym = this.symbol2;
                 else if (name == "Team3")
-                    sym = $this.symbol3;
+                    sym = this.symbol3;
                 else if (name == "Team4")
-                    sym = $this.symbol4;
+                    sym = this.symbol4;
                 else if (name == "Team5")
-                    sym = $this.symbol5;
+                    sym = this.symbol5;
                 else if (name == "Team6")
-                    sym = $this.symbol6;
+                    sym = this.symbol6;
                 else
-                    sym = $this.symbol7;
+                    sym = this.symbol7;
                 var g = new esri.Graphic(pt, sym);
-                $this.map.graphics.add(g);
+                this.map.graphics.add(g);
             };
-            g.setInfoTemplate(new esri.InfoTemplate().setTitle(msg.name + ' ' + tS).setContent(msg.text));
+            //g.setInfoTemplate(new esri.InfoTemplate().setTitle(name + ' ' + tS).setContent(text));
             //
             $('#share-modal').modal('hide'); $('#message-input').val(''); this.model.set('loc', null);
         }, getLocation: function(model) {
