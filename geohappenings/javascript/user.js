@@ -45,6 +45,25 @@ saveMsg: function (evt) {
 	this.fb.child(name).child('messages').push({ name: name, text: text,
 			lat: loc.lat, lon: loc.lon, timeStamp: tC });
 	$('#share-modal').modal('hide'); $('#message-input').val(''); this.model.set('loc', null);
+	if (loc.lat && loc.lon && $this.map.graphics) {
+		var pt = new esri.geometry.Point(loc.lon, loc.lat);
+		var sym;
+		if (name=="Team1")
+			sym=$this.symbol1;
+		else if(name=="Team2")
+			sym=$this.symbol2;
+		else if(name=="Team3")
+			sym=$this.symbol3;
+		else if(name=="Team4")
+			sym=$this.symbol4;
+		else if(name=="Team5")
+			sym=$this.symbol5;
+		else if(name=="Team6")
+			sym=$this.symbol6;
+		else
+			sym=$this.symbol7;
+		var g = new esri.Graphic(pt, sym);
+		$this.map.graphics.add(g);
 },getLocation: function (model) {
 	if (navigator.geolocation) {
 		$('#loader').modal({show: true, backdrop: false});
